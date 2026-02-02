@@ -24,12 +24,16 @@ class HomePage extends StatelessWidget {
     NewsController newsController = Get.put(NewsController());
     return Scaffold(
       appBar: AppBar(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(30),
+          ),
+        ),
         centerTitle: true,
-        backgroundColor: Colors.grey,
+        backgroundColor: Colors.grey.shade300,
         title: Text(
           "Dashboard",
-          style: TextStyle(
-              fontWeight: FontWeight.bold, fontSize: 20, color: Colors.white),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
         ),
       ),
       body: Padding(
@@ -49,11 +53,19 @@ class HomePage extends StatelessWidget {
                   },
                   child: Container(
                     padding: EdgeInsets.fromLTRB(5, 5, 5, 16),
-                    margin: EdgeInsets.only(bottom: 5),
+                    margin: EdgeInsets.only(bottom: 16),
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: Colors.grey,
+                      color: Colors.grey.shade100,
                       borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.shade400,
+                          blurRadius: 5,
+                          spreadRadius: 1,
+                          offset: Offset(0, 3),
+                        ),
+                      ],
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
